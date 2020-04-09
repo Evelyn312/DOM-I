@@ -42,20 +42,27 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
-let navItems = document.querySelectorAll('header nav a');
+let navItems = document.querySelectorAll('header nav a');  //selected all a tag in header, nodelist 
 
-// console.log(navItems);
 
-let navArray = Array.from(navItems);
+navItems.forEach((item,i) => item.textContent = siteContent.nav[`nav-item-${i++}`]); //go thru every tag and add content
 
-// console.log(navArray);
+navItems.forEach((item) => item.style.color = "green"); // change color for the nav text
 
-navArray.forEach((item,i) => item.textContent = siteContent.nav[`nav-item-${i++}`]);
+let newNav1 = document.createElement('a');
+newNav1.textContent = "Home";
+newNav1.style.color = "green";
+let nav = document.querySelector('nav');
+nav.prepend(newNav1);
+
+let newNav2 = document.createElement('a');
+newNav2.textContent = "Careers";
+newNav2.style.color = "green";
+nav.appendChild(newNav2);
 
 
 let mainText = document.querySelector('.cta h1');
 
-// console.log(mainText);
 
 mainText.textContent = siteContent.cta.h1;
 
