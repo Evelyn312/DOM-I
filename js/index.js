@@ -40,3 +40,60 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+let navItems = document.querySelectorAll('header nav a');
+
+// console.log(navItems);
+
+let navArray = Array.from(navItems);
+
+// console.log(navArray);
+
+navArray.forEach((item,i) => item.textContent = siteContent.nav[`nav-item-${i++}`]);
+
+
+let mainText = document.querySelector('.cta h1');
+
+// console.log(mainText);
+
+mainText.textContent = siteContent.cta.h1;
+
+// console.log(siteContent.cta.h1);
+
+let button = document.querySelector('.cta button');
+button.textContent = siteContent.cta.button;
+
+let imgHeader = document.getElementById('cta-img');
+
+imgHeader.setAttribute('src', siteContent.cta["img-src"]);
+
+let mainH4 = document.querySelectorAll('.main-content h4');
+
+// console.log(mainH4);
+
+
+let mainH4Values = Object.values(siteContent["main-content"]);
+
+
+mainH4[0].textContent = mainH4Values[0];
+mainH4[1].textContent = mainH4Values[2];
+mainH4[2].textContent = mainH4Values[5];
+mainH4[3].textContent = mainH4Values[7];
+mainH4[4].textContent = mainH4Values[9];
+
+let mainPara = document.querySelectorAll('.main-content p');
+
+mainPara[0].textContent = mainH4Values[1];
+mainPara[1].textContent = mainH4Values[3];
+mainPara[2].textContent = mainH4Values[6];
+mainPara[3].textContent = mainH4Values[8];
+mainPara[4].textContent = mainH4Values[10];
+
+let middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+console.log(siteContent["main-content"]["middle-img-src"]);
+
+
+
