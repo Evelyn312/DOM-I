@@ -91,9 +91,20 @@ mainPara[3].textContent = mainH4Values[8];
 mainPara[4].textContent = mainH4Values[10];
 
 let middleImg = document.getElementById('middle-img');
-middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-console.log(siteContent["main-content"]["middle-img-src"]);
 
+let contact = document.querySelector('.contact h4');
+contact.textContent = siteContent.contact['contact-h4'];
+let contactPara = document.querySelectorAll('.contact p');
+
+
+let contactValue = Object.values(siteContent.contact);
+
+contactPara.forEach( (para, i) => para.textContent = contactValue[i+1]);
+
+let footerPara = document.querySelector('footer p');
+
+footerPara.textContent = siteContent.footer.copyright;
 
 
